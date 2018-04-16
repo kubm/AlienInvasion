@@ -11,7 +11,7 @@ class Alien(Sprite):
         self.screen = screen
 
         # Load the alien image
-        self.image = pygame.image.load('images/alien.bmp')
+        self.image = pygame.image.load('images/raindrop.png')
         self.rect = self.image.get_rect()
 
         # Start each new alien near top left corner
@@ -19,6 +19,7 @@ class Alien(Sprite):
         self.rect.y = self.rect.height
 
         self.x = float(self.rect.x)
+        self.y = float(self.rect.y)
 
     def blitme(self):
         """Draw alien ship at its location """
@@ -27,12 +28,11 @@ class Alien(Sprite):
     def check_edges(self):
         """Return True if alien is at the edge"""
         screen_rect = self.screen.get_rect()
-        if self.rect.right >= screen_rect.right:
-            return True
-        elif self.rect.left <= 0:
+        if self.rect.bottom >= screen_rect.bottom:
             return True
 
     def update(self):
         """Move the alien right"""
-        self.x += (self.settings.alien_speed_factor * self.settings.fleet_direction)
-        self.rect.x = self.x
+        # self.x += (self.settings.alien_speed_factor * self.settings.fleet_direction)
+        # self.rect.x = self.x
+        self.rect.y += 1
