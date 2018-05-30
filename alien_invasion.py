@@ -42,5 +42,5 @@ def run_game():
 
         gf.update_screen(game_settings, screen, stats, sb, ship, aliens, bullets, play_button)
 
-
+# test
 run_game()
